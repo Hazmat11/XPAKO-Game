@@ -30,11 +30,6 @@ public class EnemyFollow : MonoBehaviour
         movement = direction;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(gameObject);
-    }
-
     private void FixedUpdate()
     {
         moveCharacter(movement);
