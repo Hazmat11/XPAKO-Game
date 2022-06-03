@@ -10,6 +10,7 @@ public class SpawnEnemies : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject[] enemyPrefabs;
     public int TimeForSpawn;
+    public float timeValue;
 
     private int tmp;
     private Vector3 posSpawn;
@@ -17,11 +18,21 @@ public class SpawnEnemies : MonoBehaviour
 
     void Update()
     {
+
+         if (timeValue > 0)
+        {
+            timeValue += Time.deltaTime;
+        }
+        else
+        {
+            timeValue = 0;
+        }
+
         if (randomPoints == true)
         {
             if (tmp == TimeForSpawn)
             {
-                if (randomEnemy == true)
+                if (timeValue >= 0 )
                 {
                     int randEnemy = Random.Range(0, enemyPrefabs.Length);
 
@@ -45,19 +56,20 @@ public class SpawnEnemies : MonoBehaviour
                         incZ++;
                     }
                 }
-                if (randomEnemy == false) 
+                if (randomEnemy == false)
                 {
-                    {
-                        for (int = 0; i < group; i++)
-                        {
-                            int randPoints = Random.Range(0, spawnPoints.Length);
-                            posSpawn = spawnPoints[randPoints].position;
-                            posSpawn.z += incZ;
+                    int randEnemy = Random.Range(0, enemyPrefabs.Length);
 
-                            GameObject enemy = Instantiate(enemyPrefabs[], posSpawn, transform.rotation);
-                            incZ++;
-                        }
+                    for (int i = 0; i < group; i++)
+                    {
+                        int randPoints = Random.Range(0, spawnPoints.Length);
+                        posSpawn = spawnPoints[randPoints].position;
+                        posSpawn.z += incZ;
+
+                        GameObject enemy = Instantiate(enemyPrefabs[2], posSpawn, transform.rotation);
+                        incZ++;
                     }
+
                 }
 
                 tmp = 0;
