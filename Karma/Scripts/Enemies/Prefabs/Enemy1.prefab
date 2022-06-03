@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -1916654249453183210}
   m_Layer: 0
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,3 +149,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 2
+  dm: {fileID: 0}
+  xpPrefabs: {fileID: 770323737848156485, guid: 2b787259cc084d04089573d482c61402, type: 3}

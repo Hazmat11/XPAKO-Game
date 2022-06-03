@@ -15,6 +15,7 @@ public class EnemyFollow : MonoBehaviour
     {
         player = GameObject.Find("MainChar");
         Vector3 pos = transform.position;
+        pos.z = 1;
         transform.position = pos;
         rb = this.GetComponent<Rigidbody2D>();
     }

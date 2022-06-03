@@ -13,7 +13,6 @@ public class SpawnEnemies : MonoBehaviour
 
     private int tmp;
     private Vector3 posSpawn;
-    private int incZ;
 
     void Update()
     {
@@ -28,21 +27,15 @@ public class SpawnEnemies : MonoBehaviour
                     for (int i = 0; i < group; i++)
                     {
                         int randPoints = Random.Range(0, spawnPoints.Length);
-                        posSpawn = spawnPoints[randPoints].position;
-                        posSpawn.z += incZ;
-
-                        GameObject enemy = Instantiate(enemyPrefabs[randEnemy], posSpawn, transform.rotation);
-                        incZ++;
+                        
+                        GameObject enemy = Instantiate(enemyPrefabs[randEnemy], spawnPoints[randPoints].position, transform.rotation);
                     }
                 } else {
                     for (int i = 0; i < group; i++)
                     {
                         int randPoints = Random.Range(0, spawnPoints.Length);
-                        posSpawn = spawnPoints[randPoints].position;
-                        posSpawn.z += incZ;
 
-                        GameObject enemy = Instantiate(enemyPrefabs[0], posSpawn, transform.rotation);
-                        incZ++;
+                        GameObject enemy = Instantiate(enemyPrefabs[0], spawnPoints[randPoints].position, transform.rotation);
                     }
                 }
 
@@ -58,12 +51,9 @@ public class SpawnEnemies : MonoBehaviour
 
                 for (int i = 0; i < rangeSP ; i++)
                 {
-                    posSpawn = spawnPoints[i].position;
-                    posSpawn.z += incZ;
-                    Debug.Log(posSpawn.z);
-                    
-                    GameObject enemy = Instantiate(enemyPrefabs[0], posSpawn, transform.rotation);
-                    incZ++;
+
+
+                    GameObject enemy = Instantiate(enemyPrefabs[0], spawnPoints[i].position, transform.rotation);
                 }
 
                 tmp = 0;

@@ -7,10 +7,14 @@ public class MainCharLifeSys : MonoBehaviour
     public int hp = 5;
     public int SafeTime = 2000;
     public string[] enemies;
+    public double PlayerSpeed = 50;
 
     private int damage;
     private int tmpSafe;
     private int tmpGainLife;
+
+    public double damageWeapon = 1.0;
+    public double speedWeapon = 200.0;
 
     void Update()
     {
@@ -42,13 +46,33 @@ public class MainCharLifeSys : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D collisionInfo)
     {
+        if (collisionInfo.gameObject.tag == "Bonus")
+        {
+            if (collisionInfo.gameObject.name == "Speed+(Clone)")
+            {
+                PlayerSpeed = PlayerSpeed * 1.1;
+                Debug.Log(PlayerSpeed);
+            }
+
+            if (collisionInfo.gameObject.name == "Damage+(Clone)")
+            {
+                damageWeapon = damageWeapon * 1.1;
+                Debug.Log("damageD" + damageWeapon);
+            }
+
+            if (collisionInfo.gameObject.name == "SpeedWeapon+(Clone)")
+            {
+                speedWeapon = speedWeapon * 0.9;
+                Debug.Log("SpeedWD" + speedWeapon);
+            }
+        }
+
         int rangeTabEn = enemies.Length;
 
         for (int i = 0; i < rangeTabEn; i++)
         {
             if (collisionInfo.collider.name == enemies[i])
             {
-                Debug.Log(damage);
                 damage++;
             }
         }
