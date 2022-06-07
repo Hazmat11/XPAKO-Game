@@ -27,7 +27,7 @@ public class BossSpawn : MonoBehaviour
             timeValue = 0f;
         }
 
-        if (Timefixed == 5 && one == true)
+        if (Timefixed == 60 && one == true)
         {
             GameObject enemy = Instantiate(enemyPrefabs[0], posSpawn, transform.rotation);
             one = false;

@@ -11,6 +11,7 @@ public class SpawnEnemies : MonoBehaviour
     public GameObject[] enemyPrefabs;
     public int TimeForSpawn;
     public float timeValue;
+    public bool spawn;
 
     private int tmp;
     private Vector3 posSpawn;
@@ -32,7 +33,7 @@ public class SpawnEnemies : MonoBehaviour
         {
             if (tmp == TimeForSpawn)
             {
-                if (timeValue >= 0 )
+                if (timeValue >= 0 && spawn == true)
                 {
                     int randEnemy = Random.Range(0, enemyPrefabs.Length);
 
@@ -45,17 +46,10 @@ public class SpawnEnemies : MonoBehaviour
                         GameObject enemy = Instantiate(enemyPrefabs[randEnemy], posSpawn, transform.rotation);
                         incZ++;
                     }
-                } else {
-                    for (int i = 0; i < group; i++)
-                    {
-                        int randPoints = Random.Range(0, spawnPoints.Length);
-                        posSpawn = spawnPoints[randPoints].position;
-                        posSpawn.z += incZ;
-
-                        GameObject enemy = Instantiate(enemyPrefabs[0], posSpawn, transform.rotation);
-                        incZ++;
-                    }
+                } if (timeValue > 60){
+                    spawn = false ;
                 }
+
                 if (randomEnemy == false)
                 {
                     int randEnemy = Random.Range(0, enemyPrefabs.Length);

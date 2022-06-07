@@ -738,7 +738,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -191.4, y: -51.7}
+  m_AnchoredPosition: {x: -191, y: -51}
   m_SizeDelta: {x: 700.7196, y: 366.4316}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232187387
@@ -1157,7 +1157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -207, y: -62.3, z: -10}
+  m_LocalPosition: {x: -13.1, y: 39.8, z: -10}
   m_LocalScale: {x: 1, y: 0.9273, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1205,6 +1205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 522577898}
   - component: {fileID: 522577899}
+  - component: {fileID: 522577900}
   m_Layer: 0
   m_Name: SpawnBoss1
   m_TagString: Untagged
@@ -1247,6 +1248,19 @@ MonoBehaviour:
   timeValue: 1
   Timefixed: 0
   one: 1
+--- !u!114 &522577900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522577896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4f6c3b05ab3c64db923804a6a41fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 519420032}
 --- !u!1 &568811398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1712,7 +1726,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914623347}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -207, y: -62.3, z: 0}
+  m_LocalPosition: {x: -13.1, y: 39.8, z: 0}
   m_LocalScale: {x: 6.408886, y: 5.6028395, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1937,8 +1951,9 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1581441610768802459, guid: 34caf2711c321c64e856b05dbbc994cc, type: 3}
   - {fileID: 3084298711821761775, guid: bf8ae6161e8d49f428e8138825c02c87, type: 3}
-  TimeForSpawn: 6000
+  TimeForSpawn: 500
   timeValue: 1
+  spawn: 1
 --- !u!4 &966398613
 Transform:
   m_ObjectHideFlags: 0
@@ -2205,7 +2220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1d1826c3629ca43bf89e87b26f5b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomPoints: 0
+  randomPoints: 1
   randomEnemy: 0
   group: 1
   spawnPoints:
@@ -2215,8 +2230,9 @@ MonoBehaviour:
   - {fileID: 1343403807}
   enemyPrefabs:
   - {fileID: 3084298711821761775, guid: bf8ae6161e8d49f428e8138825c02c87, type: 3}
-  TimeForSpawn: 10000
+  TimeForSpawn: 5000
   timeValue: 1
+  spawn: 1
 --- !u!4 &1036174647
 Transform:
   m_ObjectHideFlags: 0
@@ -3008,7 +3024,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5948052, y: 1}
+    m_SensorSize: {x: 0.5094614, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3025,7 +3041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631846015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -207, y: -62.3, z: -10}
+  m_LocalPosition: {x: -13.1, y: 39.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
