@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3084298711821761768}
   - component: {fileID: -7454736753855910526}
   - component: {fileID: 1790800675395804021}
+  - component: {fileID: 7639323470108260924}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Enemy
@@ -135,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dfa9dfd994c3ab4faf1f7f5233a1fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  ES: {fileID: 7639323470108260924}
 --- !u!114 &1790800675395804021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +149,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dcaf105cacd50f4d86c4cf1bff6a4d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  dm: {fileID: 0}
   xpPrefabs: {fileID: 770323737848156485, guid: 2b787259cc084d04089573d482c61402, type: 3}
+  damageTaken: 0
+  ES: {fileID: 7639323470108260924}
+--- !u!114 &7639323470108260924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084298711821761775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c49003329fe9f84e8c413bc913d68dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  hp: 3
+  damage: 2
+  speed: 3

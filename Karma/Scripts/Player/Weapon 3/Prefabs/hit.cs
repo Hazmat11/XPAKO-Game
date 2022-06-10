@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rotator : MonoBehaviour
+public class hit : MonoBehaviour
 {
-    public WeaponStats WS;
-    public Transform player;
+    private int lifeTime = 50;
+    private int tmp = 0;
 
-    private void Update ()
+    void Update ()
     {
-        gameObject.transform.position = player.position;
-        transform.Rotate(new Vector3(0f, 0f, (float)WS.bulletSpeed) * Time.deltaTime);
+        if (tmp == lifeTime)
+        {
+            Destroy(gameObject);
+        } else {
+            tmp++;
+        }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D (Collision2D collision)
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Bullet")
         {

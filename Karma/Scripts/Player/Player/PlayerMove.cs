@@ -11,8 +11,8 @@ public class PlayerMove : MonoBehaviour
 
     void Start ()
     {
-        MainCharLifeSys MCL = gameObject.GetComponent<MainCharLifeSys>();
-        playerSpeed = MCL.PlayerSpeed;
+        Player P = gameObject.GetComponent<Player>();
+        playerSpeed = P.PlayerSpeed;
     }
 
     // Update is called once per frame

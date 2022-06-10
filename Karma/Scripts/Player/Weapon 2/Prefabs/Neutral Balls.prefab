@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4675636725698073991}
   - component: {fileID: 4675636725698073984}
   - component: {fileID: 4675636725698073985}
+  - component: {fileID: 985324708422298035}
   m_Layer: 0
   m_Name: Neutral Balls
   m_TagString: Bullet
@@ -121,3 +122,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &985324708422298035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4675636725698073987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7204fe1bf6fb8b645a7a7bcb8f11206a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  bulletSpeed: 0
+  fireRate: 0
+  damage: 2

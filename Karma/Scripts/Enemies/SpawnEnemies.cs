@@ -51,8 +51,6 @@ public class SpawnEnemies : MonoBehaviour
 
                 for (int i = 0; i < rangeSP ; i++)
                 {
-
-
                     GameObject enemy = Instantiate(enemyPrefabs[0], spawnPoints[i].position, transform.rotation);
                 }
 

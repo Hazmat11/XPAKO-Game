@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TrackingCamera : MonoBehaviour
 {
-    public Transform cam;
+    public Transform player;
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = cam.position;
+        transform.position = player.position;
     }
 }

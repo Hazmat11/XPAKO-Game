@@ -7,18 +7,41 @@ public class spawnBalls : MonoBehaviour
 
     public Transform[] spawnPoints;
     public GameObject[] ballsPrefabs;
-    public int counter = 0;
+    public WeaponStats WS;
 
-    List<GameObject> counterBalls = new List<GameObject>();
+    List<GameObject> balls = new List<GameObject>();
+
+    private int actualLevel;
 
     void Update()
     {
-        int counterBs = counterBalls.Count;
+        levelUp();
+    }
 
-        if (counterBs < counter && counter <= 4)
+    void newBalls ()
+    {
+        int indexNB = selectBalls();
+
+        for (int i = 0; i <= actualLevel -1; i++)
         {
-            GameObject balls = Instantiate(ballsPrefabs[0], spawnPoints[counterBalls.Count].transform.position, spawnPoints[counterBalls.Count].transform.rotation, gameObject.transform);
-            counterBalls.Add(balls);
+            GameObject balls = Instantiate(ballsPrefabs[indexNB], spawnPoints[i].transform.position, spawnPoints[i].transform.rotation, gameObject.transform);
+        }
+    }
+
+    int selectBalls ()
+    {
+        //menu de selection de new ball
+
+        // return #ballCode
+        return 0;
+    }
+
+    void levelUp ()
+    {
+        if (actualLevel != WS.level)
+        {
+            actualLevel = WS.level;
+            newBalls();
         }
     }
 }

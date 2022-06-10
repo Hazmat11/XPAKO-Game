@@ -8,20 +8,12 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
     public Camera cam;
     public GameObject player;
+    public WeaponStats WS;
 
     List<GameObject> target = new List<GameObject>();
 
-    private double fireSpeed;
-    private double bulletForce;
     private int tmp;
     private int index = 0;
-
-    void Start ()
-    {
-        WeaponStats WS = gameObject.GetComponent<WeaponStats>();
-        fireSpeed = WS.fireRate;
-        bulletForce = WS.bulletSpeed;
-    }
 
     void Update()
     {
@@ -57,11 +49,6 @@ public class Shooting : MonoBehaviour
 
     void Aiming()
     {
-        // Rigidbody2D rb1 = gameObject.transform.GetComponent<Rigidbody2D>();
-        // Vector2 lookDir1 = target[index].transform.position - gameObject.transform.position;
-        // float angle1 = Mathf.Atan2(lookDir1.y, lookDir1.x) * Mathf.Rad2Deg - 90f;
-        // rb1.rotation = angle1;
-
         int nbFirePoints = firePoint.Length;
 
         for (int i = 0; i < nbFirePoints; i++)
@@ -75,16 +62,14 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        float BFtmp = (float)bulletForce;
-
-        if(tmp == fireSpeed)
+        if(tmp == WS.fireRate)
         {
             for (int i = 0; i < 3; i++)
             {
                 int randPoints = Random.Range(0, firePoint.Length);
                 GameObject bullet = Instantiate(bulletPrefab, firePoint[randPoints].transform.position, firePoint[randPoints].transform.rotation);
                 Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-                rb.AddForce(firePoint[randPoints].transform.up * BFtmp, ForceMode2D.Impulse);
+                rb.AddForce(firePoint[randPoints].transform.up * (float)WS.bulletSpeed, ForceMode2D.Impulse);
             }
             tmp = 0;
         } else {

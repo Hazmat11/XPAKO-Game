@@ -6,20 +6,6 @@ public class WeaponStats : MonoBehaviour
 {
     public int level = 1;
     public double bulletSpeed;
-
     public double fireRate;
     public double damage;
-
-    GameObject player;
-    MainCharLifeSys MCL;
-    
-    void Update ()
-    {
-        GameObject player = GameObject.Find("MainChar");
-        MainCharLifeSys MCL = player.GetComponent<MainCharLifeSys>();
-        damage = MCL.damageWeapon;
-        fireRate = MCL.speedWeapon;
-        Debug.Log("damage : " + damage);
-        Debug.Log("fire rate : " + fireRate);
-    }
 }
