@@ -14,12 +14,13 @@ GameObject:
   - component: {fileID: 8709697859332355434}
   - component: {fileID: 7771209885350799965}
   - component: {fileID: 1407805176665945895}
+  - component: {fileID: -2327383225939558701}
   m_Layer: 7
   m_Name: Boss 1
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &794681127122847300
 Transform:
@@ -151,3 +152,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+--- !u!114 &-2327383225939558701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075993445819346558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd548314f32e25c43a1f64db3966be47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  currentHealth: {fileID: 0}

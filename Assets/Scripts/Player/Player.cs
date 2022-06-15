@@ -28,28 +28,31 @@ public class Player : MonoBehaviour
         c = rend.material.color;
     }
 
-    public void Update()
-    {
-        if (currentHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
     void OnCollisionEnter2D(Collision2D collison)
     {
         if (collison.collider.CompareTag("Enemy") && currentHealth > 0)
-            StartCoroutine("GetInvulnerable");
         {
-            TakeDamage(1);
+            StartCoroutine("GetInvulnerable");
         }
-    }
 
-    void TakeDamage(int damage)
+        if (collison.collider.CompareTag("Boss") && currentHealth > 0)
+        {
+            StartCoroutine("GetInvulnerable");
+        }
+
+    }
+    
+
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SavePlayer()

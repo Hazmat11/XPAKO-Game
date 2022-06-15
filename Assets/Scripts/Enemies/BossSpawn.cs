@@ -33,6 +33,19 @@ public class BossSpawn : MonoBehaviour
             one = false;
         } 
 
+        if (Timefixed == 61 && one == false)
+        {
+            one = true;
+        }
+
+        if (Timefixed == 62 && one == true)
+        {
+            GameObject enemy = Instantiate(enemyPrefabs[1], posSpawn, transform.rotation);
+            one = false;
+        }
+
+        
+
 
     }
 }

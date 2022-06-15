@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyFollow : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float timeValue = 0;
+    public float Timefixed;
 
     private GameObject player;
     private Rigidbody2D rb;
