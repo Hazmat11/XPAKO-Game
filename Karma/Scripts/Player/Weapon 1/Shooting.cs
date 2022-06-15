@@ -10,41 +10,23 @@ public class Shooting : MonoBehaviour
     public GameObject player;
     public WeaponStats WS;
 
-    List<GameObject> target = new List<GameObject>();
-
     private int tmp;
-    private int index = 0;
+    private FindClosest FC;
+
+    void Start ()
+    {
+        FC = player.GetComponent<FindClosest>();
+    }
 
     void Update()
     {
-        SetTarget();
-        if (target[index] != null)
-        {
-            Aiming();
-            Shoot();
-        }
+        Aiming();
+        Shoot();
 
         if(player == null)
         {
             Destroy(gameObject);
         }
-    }
-
-    private void OnTriggerEnter2D (Collider2D colliderInfo)
-    {
-        if (colliderInfo.gameObject.tag == "Enemy")
-        {
-            target.Add(colliderInfo.gameObject);
-        }
-    }
-
-    int SetTarget()
-    {
-        while(target[index] == null)
-        {
-            index++;
-        }
-        return index;
     }
 
     void Aiming()
@@ -54,7 +36,7 @@ public class Shooting : MonoBehaviour
         for (int i = 0; i < nbFirePoints; i++)
         {
             Rigidbody2D rb = firePoint[i].GetComponent<Rigidbody2D>();
-            Vector2 lookDir = target[index].transform.position - firePoint[i].transform.position;
+            Vector2 lookDir = FC.closestEnemy.transform.position - firePoint[i].transform.position;
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
             rb.rotation = angle;
         }
