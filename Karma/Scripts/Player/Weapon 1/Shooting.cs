@@ -36,7 +36,7 @@ public class Shooting : MonoBehaviour
         for (int i = 0; i < nbFirePoints; i++)
         {
             Rigidbody2D rb = firePoint[i].GetComponent<Rigidbody2D>();
-            Vector2 lookDir = FC.closestEnemy.transform.position - firePoint[i].transform.position;
+            Vector2 lookDir = FC.FindClosestEnemy().transform.position - firePoint[i].transform.position;
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
             rb.rotation = angle;
         }

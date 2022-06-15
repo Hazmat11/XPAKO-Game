@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class FindClosest : MonoBehaviour 
 {
-    public EnemyStats closestEnemy;
-
-    void Update () {
-        FindClosestEnemy ();
-    }
-
-    void FindClosestEnemy()
+    public GameObject FindClosestEnemy()
     {
         float distanceToClosestEnemy = Mathf.Infinity;
-        EnemyStats closestEnemy = null;
-        EnemyStats[] allEnemies = GameObject.FindObjectsOfType<EnemyStats>();
+        GameObject closestEnemy = null;
+        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
 
-        foreach (EnemyStats currentEnemy in allEnemies) {
+        foreach (GameObject currentEnemy in allEnemies) {
             float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
 
             if (distanceToEnemy < distanceToClosestEnemy) {
@@ -25,5 +19,8 @@ public class FindClosest : MonoBehaviour
                 closestEnemy = currentEnemy;
             }
         }
+        Debug.DrawLine (this.transform.position, closestEnemy.transform.position);
+
+        return closestEnemy;
     }
 }
