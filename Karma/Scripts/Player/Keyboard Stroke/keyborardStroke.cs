@@ -9,18 +9,21 @@ public class keyborardStroke : MonoBehaviour
     public WeaponStats WS;
 
     private FindClosest FC;
+    private int currentLevel;
     private int tmp;
 
     void Start ()
     {
         GameObject[] player = GameObject.FindGameObjectsWithTag("Player");
         FC = player[0].GetComponent<FindClosest>();
+        currentLevel = WS.level;
     }
 
     void Update ()
     {
         Aiming();
         Hit();
+        LevelUp();
     }
 
     void Aiming ()
@@ -41,6 +44,15 @@ public class keyborardStroke : MonoBehaviour
             tmp = 0;
         } else {
             tmp++;
+        }
+    }
+
+    void LevelUp ()
+    {
+        if (currentLevel != WS.level)
+        {
+            currentLevel = WS.level;
+            WS.damage = WS.damage + (2*currentLevel);
         }
     }
 }

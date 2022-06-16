@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4f6c3b05ab3c64db923804a6a41fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!114 &1613375002138455634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,5 +150,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 609556582588726942, guid: c284b52c7ad37374bb573431866db1e9, type: 3}
   hitPoint: {fileID: 1613375001663619678}
-  player: {fileID: 0}
   WS: {fileID: 1613375002138455634}

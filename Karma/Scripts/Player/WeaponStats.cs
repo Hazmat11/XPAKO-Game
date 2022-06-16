@@ -7,5 +7,5 @@ public class WeaponStats : MonoBehaviour
     public int level = 1;
     public double bulletSpeed;
     public double fireRate;
-    public double damage;
+    public int damage;
 }
