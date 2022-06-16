@@ -26,7 +26,16 @@ public class EnemyLifeSys : MonoBehaviour
     {
         if (collisionInfo.gameObject.tag == "Bullet")
         {
-            WeaponStats WS = collisionInfo.gameObject.GetComponent<WeaponStats>();
+            WeaponStats WS = collisionInfo.gameObject.transform.parent.GetComponent<WeaponStats>();
+            damageTaken += WS.damage;
+        }
+    }
+
+    void OnTriggerEnter2D (Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            WeaponStats WS = collision.gameObject.transform.parent.GetComponent<WeaponStats>();
             damageTaken += WS.damage;
         }
     }

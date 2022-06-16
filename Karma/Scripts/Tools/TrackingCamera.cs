@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class TrackingCamera : MonoBehaviour
 {
-    public Transform player;
+    private GameObject[] player;
 
-    // Update is called once per frame
+    void Start ()
+    {
+        player = GameObject.FindGameObjectsWithTag("Player");
+    }
+
     void Update()
     {
-        transform.position = player.position;
+        transform.position = player[0].transform.position;
     }
 }

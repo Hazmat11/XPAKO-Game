@@ -19,6 +19,7 @@ public class FindClosest : MonoBehaviour
                 closestEnemy = currentEnemy;
             }
         }
+
         Debug.DrawLine (this.transform.position, closestEnemy.transform.position);
 
         return closestEnemy;
