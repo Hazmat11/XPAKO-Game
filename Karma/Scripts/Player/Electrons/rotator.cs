@@ -5,11 +5,16 @@ using UnityEngine;
 public class rotator : MonoBehaviour
 {
     public WeaponStats WS;
-    public Transform player;
+    private GameObject[] player;
+
+    void Start ()
+    {
+        player = GameObject.FindGameObjectsWithTag("Player");
+    }
 
     private void Update ()
     {
-        gameObject.transform.position = player.position;
+        gameObject.transform.position = player[0].transform.position;
         transform.Rotate(new Vector3(0f, 0f, (float)WS.bulletSpeed) * Time.deltaTime);
     }
 

@@ -151,8 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xpPrefabs: {fileID: 770323737848156485, guid: 2b787259cc084d04089573d482c61402, type: 3}
-  damageTaken: 0
   ES: {fileID: 4360138896028008330}
+  damageTaken: 0
 --- !u!114 &4360138896028008330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
   level: 1
   hp: 2
   damage: 1
-  speed: 5
+  speed: 4
 --- !u!114 &9107048743369223760
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xpPrefabs: {fileID: 770323737848156485, guid: 2b787259cc084d04089573d482c61402, type: 3}
-  damageTaken: 0
   ES: {fileID: 7639323470108260924}
+  damageTaken: 0
 --- !u!114 &7639323470108260924
 MonoBehaviour:
   m_ObjectHideFlags: 0

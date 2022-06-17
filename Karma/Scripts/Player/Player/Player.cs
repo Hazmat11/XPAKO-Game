@@ -31,6 +31,11 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D collisionInfo)
     {
+        if (collisionInfo.gameObject.tag == "Player" || collisionInfo.gameObject.tag == "Bullet")
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), collisionInfo.gameObject.GetComponent<Collider2D>());
+        }
+
         if (collisionInfo.gameObject.tag == "Bonus")
         {
             verifBonus(collisionInfo.gameObject);

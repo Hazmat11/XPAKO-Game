@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
 
     void Update ()
     {
+        transform.Rotate(new Vector3(0f, 0f, 5) * Time.deltaTime);
+
         if (tmp == lifeTime)
         {
             Destroy(gameObject);
