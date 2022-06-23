@@ -19,7 +19,15 @@ public class Bullet : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
-    }
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "BulletEnemy")
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
+            Debug.Log(collision.gameObject.GetComponent<Collider2D>());
+        }
 
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

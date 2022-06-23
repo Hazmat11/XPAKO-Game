@@ -40,6 +40,11 @@ public class Player : MonoBehaviour
             StartCoroutine("GetInvulnerable");
         }
 
+        if (collison.collider.CompareTag("BulletEnemy") && currentHealth > 0)
+        {
+            StartCoroutine("GetInvulnerable");
+        }
+
     }
     
 

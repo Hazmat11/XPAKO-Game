@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
-    public float playerSpeed = 5f;
+    public static float playerSpeed = 5f;
     public float timeValue = 0;
     public float Timefixed;
 

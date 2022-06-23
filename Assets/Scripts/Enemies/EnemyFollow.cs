@@ -5,12 +5,11 @@ using UnityEngine;
 public class EnemyFollow : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float timeValue = 0;
-    public float Timefixed;
 
     private GameObject player;
     private Rigidbody2D rb;
     private Vector2 movement;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +26,10 @@ public class EnemyFollow : MonoBehaviour
     {
         Vector3 direction = player.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+        //rb.rotation = angle;
         direction.Normalize();
         movement = direction;
+
     }
 
     private void FixedUpdate()
