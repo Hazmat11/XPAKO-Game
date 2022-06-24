@@ -4,74 +4,50 @@ using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
-    public bool randomPoints;
     public bool randomEnemy;
     public int group;
-    public Transform[] spawnPoints;
     public GameObject[] enemyPrefabs;
     public int TimeForSpawn;
-    public float timeValue;
-    public bool spawn;
-    public float Timefixed;
 
     private int tmp;
-    private Vector3 posSpawn;
-    private int incZ;
+    private GameObject parent;
+    private Vector2 posSpawn;
+    private Transform[] SpPoints;
 
-    void Update() 
+    void Start ()
     {
-        if (Timefixed >= 0)
-        {
-            Timefixed = Mathf.Round(timeValue += Time.deltaTime);
-        }
-        else
-        {
-            Timefixed = 0;
-        }
+        parent = GameObject.Find("EnemiesFolder");
+        SpPoints = GetComponentsInChildren<Transform>();
+    }
 
-        if (randomPoints == true) 
+    void Update()
+    {
+        if (tmp == TimeForSpawn)
         {
-            if (tmp == TimeForSpawn)
+            if (randomEnemy)
             {
-                if (Timefixed >= 20  && spawn == true)
+                for (int i = 0; i < group; i++)
                 {
-                    int randEnemy = Random.Range(0, enemyPrefabs.Length);
-
-                    for (int i = 0; i < group; i++)
-                    {
-                        int randPoints = Random.Range(0, spawnPoints.Length);
-                        posSpawn = spawnPoints[randPoints].position;
-                        posSpawn.z += incZ;
-
-                        GameObject enemy = Instantiate(enemyPrefabs[0], posSpawn, transform.rotation);
-                        incZ++;
-                    }
-                } if (Timefixed > 120){
-                    spawn = false ;
+                    int randE = Random.Range(0, enemyPrefabs.Length);
+                    Spawn(randE);
                 }
-
-                tmp = 0;
             } else {
-                tmp++;
+                for (int i = 0; i < group; i++)
+                {
+                    Spawn(0);
+                }
             }
+
+            tmp = 0;
         } else {
-            if (tmp == TimeForSpawn)
-            {
-                int rangeSP = spawnPoints.Length;
-
-                for (int i = 0; i < rangeSP ; i++)
-                {
-                    posSpawn = spawnPoints[i].position;
-                    posSpawn.z += incZ;
-                    
-                    GameObject enemy = Instantiate(enemyPrefabs[0], posSpawn, transform.rotation);
-                    incZ++;
-                }
-
-                tmp = 0;
-            } else {
-                tmp++;
-            }
+            tmp++;
         }
+    }
+
+    void Spawn (int enemyIndex)
+    {
+        int randPoints = Random.Range(0, SpPoints.Length);
+        GameObject enemy = Instantiate(enemyPrefabs[enemyIndex], SpPoints[randPoints].position, SpPoints[randPoints].rotation);
+        enemy.transform.SetParent(parent.transform);
     }
 }

@@ -4,39 +4,39 @@ using UnityEngine;
 
 public class EnemyLifeSys : MonoBehaviour
 {
-    public float hp;
-    public float damage;
-    private float damagetaken;
     public GameObject xpPrefabs;
-    private DeathManage dm;
-    public DefineStatut ds;
+    public EnemyStats ES;
+    public double damageTaken;
 
-    void Awake()
-    {
-        ds = GameObject.FindObjectOfType<DefineStatut>();
-        dm = GameObject.FindObjectOfType<DeathManage>();
-    }
+    private int hp;
 
-    void Update()
+
+    void Update ()
     {
-        damagetaken = ds.countD;
+        hp = ES.hp;
+
+        if (damageTaken >= hp)
+            {
+                DropXP();
+                Destroy(gameObject);
+            }
     }
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
         if (collisionInfo.gameObject.tag == "Bullet")
         {
-            Physics2D.IgnoreCollision(
-                gameObject.GetComponent<Collider2D>(),
-                collisionInfo.gameObject.GetComponent<Collider2D>()
-            );
-            hp -= damagetaken;
+            WeaponStats WS = collisionInfo.gameObject.transform.parent.GetComponent<WeaponStats>();
+            damageTaken += WS.damage;
         }
-        if (hp == 0 || hp < 0)
+    }
+
+    void OnTriggerEnter2D (Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
         {
-            DropXP();
-            Destroy(gameObject);
-            dm.IncreaseDeaths();
+            WeaponStats WS = collision.gameObject.transform.parent.GetComponent<WeaponStats>();
+            damageTaken += WS.damage;
         }
     }
 
