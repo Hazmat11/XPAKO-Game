@@ -77,14 +77,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1492028568965723938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7204fe1bf6fb8b645a7a7bcb8f11206a, type: 3}
+  m_Script: {fileID: 11500000, guid: 928ebd434cbcd3f4eb5de51640af0194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  bulletSpeed: 15
-  fireRate: 200
+  bulletSpeed: 10
+  fireRate: 300
   damage: 1
-  maxLevel: 10
 --- !u!114 &1492028568965723939
 MonoBehaviour:
   m_ObjectHideFlags: 0

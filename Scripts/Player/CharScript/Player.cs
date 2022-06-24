@@ -14,11 +14,12 @@ public class Player : MonoBehaviour
 
     public GameObject gameManager;
     public HealthBar healthBar;
-
+    
     private DeathManage dm;
     private PlayerStatus PS;
     private DefineStatut ds;
     private ObjectEffect oe;
+    private EnemyStats ES;
 
     void Awake()
     {
@@ -31,6 +32,8 @@ public class Player : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         PS = gameManager.GetComponent<PlayerStatus>();
     }
+
+    private void Start() { }
 
     public void Update()
     {
@@ -65,11 +68,10 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        EnemyStats ES = collisionInfo.gameObject.GetComponent<EnemyStats>();
-
+        ES = collisionInfo.gameObject.GetComponent<EnemyStats>();
         if (collisionInfo.collider.CompareTag("Enemy") && currentHealth > 0)
         {
-            TakeDamage(ES.damage);
+            TakeDamage();
             ES.hp -= (int)oe.epine;
             Debug.Log(oe.epine);
         }
@@ -84,9 +86,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    void TakeDamage(float damageEnemy)
+    void TakeDamage()
     {
-        damage = damageEnemy;
+        damage = ES.damage;
         damage -= ds.armor;
         Debug.Log(damage);
         currentHealth -= damage;
