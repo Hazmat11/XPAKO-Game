@@ -11,6 +11,8 @@ public class XP : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb;
     private Vector2 movement;
+    public AudioSource audioSource;
+    public AudioClip XPSound;
 
     void Start()
     {
@@ -57,6 +59,7 @@ public class XP : MonoBehaviour
     {
         if (collisionInfo.gameObject.tag == "Player")
         {
+            AudioManager.instance.PlayClipAt(XPSound, transform.position);
             Destroy(gameObject);
         } else {
             Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), collisionInfo.gameObject.GetComponent<Collider2D>());
