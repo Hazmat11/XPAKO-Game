@@ -72,7 +72,6 @@ public class Player : MonoBehaviour
         {
             TakeDamage();
             els.hp -= oe.epine;
-            Debug.Log(oe.epine);
         }
 
         if (currentHealth == 0 || currentHealth < 0)
@@ -89,7 +88,6 @@ public class Player : MonoBehaviour
     {
         damage = els.damage;
         damage -= ds.armor;
-        Debug.Log(damage);
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
     }

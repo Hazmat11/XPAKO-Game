@@ -69,10 +69,11 @@ public class RandomChoice : MonoBehaviour
             SetFalse();
             for (int i = 0; i < 3; i++)
             {
-                int index = Random.Range(0, list.Count); //  Pick random element from the list
-                int j = list[index]; //  i = the number that was randomly picked
-                list.RemoveAt(index); //  Remove chosen element
+                int index = Random.Range(0, list.Count);
+                int j = list[index];
+                list.RemoveAt(index);
                 levelChoice[j].SetActive(true);
+                Debug.Log(j);
                 if (i == 0)
                 {
                     levelChoice[j].transform.localPosition = pos1;
@@ -85,8 +86,9 @@ public class RandomChoice : MonoBehaviour
                 {
                     levelChoice[j].transform.localPosition = pos3;
                 }
-                a++;
             }
+            a++;
+            Debug.Log("ouf je suis sorti");
         }
     }
 }
