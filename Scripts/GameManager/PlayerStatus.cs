@@ -6,26 +6,33 @@ public class PlayerStatus : MonoBehaviour
 {
     public GameObject player;
     Player p;
-    public DefineStatut ds;
 
-    public float countS;
+    public int countS;
     public float coefSpeed;
-    public float countSW;
-    public float countD;
-    public float hp;
+    public int countSW;
+    public int countD;
+    public int level;
+    public int hp;
+    public bool dead;
 
-    void Start()
+    public GameObject weapon1;
+    public GameObject weapon2;
+    public GameObject weapon3;
+    public GameObject weapon4;
+
+    public GameObject passif1;
+    public GameObject passif2;
+    public GameObject passif3;
+    public GameObject passif4;
+
+    public GameObject actif;
+
+    void Start ()
     {
         p = player.GetComponent<Player>();
-        ds = GameObject.FindObjectOfType<DefineStatut>();
-        countS = ds.countS;
-        coefSpeed = ds.coefSpeed;
-        countSW = ds.countSW;
-        countD = ds.countD;
-        hp = ds.hp;
     }
 
-    public void UpBonusSpeed()
+    public void UpBonusSpeed ()
     {
         p.PlayerSpeed += p.PlayerSpeed * (countS * coefSpeed);
     }
