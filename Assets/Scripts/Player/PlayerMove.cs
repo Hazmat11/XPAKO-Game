@@ -6,6 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
 
     public static float playerSpeed = 5f;
+    public float currentSpeed;
     public float timeValue = 0;
     public float Timefixed;
 
@@ -16,6 +17,12 @@ public class PlayerMove : MonoBehaviour
     Vector2 mousePos;
 
     // Update is called once per frame
+
+    void Start() 
+    {
+        playerSpeed = currentSpeed;
+    }
+    
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");

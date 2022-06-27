@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     public int damage;
-    
 
     private void OnCollisionEnter2D(Collision2D collision) 
     {
@@ -15,4 +14,15 @@ public class EnemyDamage : MonoBehaviour
             currentHealth.TakeDamage(damage);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        Player currentHealth = other.GetComponent<Player>();
+        if (other.gameObject.tag == "Player")
+        {
+            currentHealth.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+    }
+
 }

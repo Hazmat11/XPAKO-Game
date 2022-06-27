@@ -46,10 +46,18 @@ public class Player : MonoBehaviour
         }
 
     }
-    
+
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.CompareTag("BulletEnemy"))
+        {
+            StartCoroutine("GetInvulnerable");
+        }
+    }
 
     public void TakeDamage(int damage)
     {
+
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);

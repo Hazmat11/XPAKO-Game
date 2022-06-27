@@ -20,4 +20,17 @@ public class EnemyLifeSys : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Bullet")
+        {
+            damage++;
+
+            if (damage == hp)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }
