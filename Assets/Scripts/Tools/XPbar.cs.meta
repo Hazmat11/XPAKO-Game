@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 02fc1bd198cc8664dad82db5ce341e4f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - slider: {instanceID: 0}
+  - fill: {instanceID: 0}
+  - dm: {instanceID: 0}
+  - player: {instanceID: 0}
+  - pause: {instanceID: 0}
+  - counterText: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - LvlUPSound: {fileID: 8300000, guid: 9df77b70cadc8384ca073a95aebc666f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

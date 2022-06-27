@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7dcaf105cacd50f4d86c4cf1bff6a4d3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - xpPrefabs: {instanceID: 0}
+  - ds: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - DeathSound: {fileID: 8300000, guid: 61e226412092b29478f14183875098ca, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
