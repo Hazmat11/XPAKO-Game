@@ -5,7 +5,9 @@ using UnityEngine;
 public class ObjectEffect : MonoBehaviour
 {
     public DefineStatut ds;
+
     public float epine;
+
     private int a = 0;
 
     public void Start()
@@ -38,9 +40,14 @@ public class ObjectEffect : MonoBehaviour
         a++;
         if (a == 2)
         {
-            ds.armor++;
+            ds.armor += (float)(ds.armor + 0.20);
             ds.countD++;
             ds.countS++;
         }
+    }
+
+    public void Sheath()
+    {
+        ds.armor = (float)(ds.armor * 1.05);
     }
 }

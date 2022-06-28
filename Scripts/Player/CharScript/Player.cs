@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -73,7 +73,6 @@ public class Player : MonoBehaviour
         {
             TakeDamage();
             ES.hp -= (int)oe.epine;
-            Debug.Log(oe.epine);
         }
 
         if (currentHealth == 0 || currentHealth < 0)
@@ -90,7 +89,6 @@ public class Player : MonoBehaviour
     {
         damage = ES.damage;
         damage -= ds.armor;
-        Debug.Log(damage);
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
     }
