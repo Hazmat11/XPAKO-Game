@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -73,7 +73,6 @@ public class Player : MonoBehaviour
         {
             TakeDamage();
             ES.hp -= (int)oe.epine;
-            Debug.Log(oe.epine);
         }
 
         if (currentHealth == 0 || currentHealth < 0)
