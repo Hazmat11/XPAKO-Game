@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Cheeeeeeeese : MonoBehaviour
 {
-    private int lifeTime = 200;
+    private int lifeTime = 800;
     private int tmp;
 
     void Update ()
     {
-        transform.Rotate(new Vector3(0f, 0f, 100) * Time.deltaTime);
+        transform.Rotate(new Vector3(0f, 0f, 150) * Time.deltaTime);
+        
         if (tmp == lifeTime)
         {
             Destroy(gameObject);
