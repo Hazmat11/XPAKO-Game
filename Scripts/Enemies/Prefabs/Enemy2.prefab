@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3084298711821761769}
   - component: {fileID: 3084298711821761768}
   - component: {fileID: -7454736753855910526}
-  - component: {fileID: 7639323470108260924}
-  - component: {fileID: 1797521747223259540}
+  - component: {fileID: 8613569100278071965}
+  - component: {fileID: 415697620201333933}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Enemy
@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dfa9dfd994c3ab4faf1f7f5233a1fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ES: {fileID: 7639323470108260924}
---- !u!114 &7639323470108260924
+  ES: {fileID: 415697620201333933}
+--- !u!114 &8613569100278071965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,25 +148,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 3084298711821761775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f339dad22007ff742b087a42dc902b40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
-  hp: 3
-  damage: 2
-  speed: 3
---- !u!114 &1797521747223259540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3084298711821761775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7162a570fbf0e024481979d51d75f872, type: 3}
+  m_Script: {fileID: 11500000, guid: f746cfd2107534c428f4ffae8e66e235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xpPrefabs: {fileID: 770323737848156485, guid: 2b787259cc084d04089573d482c61402, type: 3}
-  ES: {fileID: 7639323470108260924}
+  ES: {fileID: 415697620201333933}
   damageTaken: 0
+--- !u!114 &415697620201333933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084298711821761775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8d1cc2156a2d744a2d6d8fb6d4900d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  hp: 4
+  damage: 2
+  speed: 3
